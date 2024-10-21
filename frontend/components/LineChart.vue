@@ -11,7 +11,10 @@
         />
         <VisAxis 
           type="x" 
-          label="Year" 
+          label="Year"
+          :labelMargin="20"
+          :labelFontSize="16"
+          labelColor="#292929"
           :tickFormat="d => d.toString()"
           :numTicks="12"
           :domain="timelineDomain"
@@ -19,6 +22,9 @@
         <VisAxis 
           type="y" 
           :label="yAxisLabel"
+          :labelMargin="20"
+          :labelFontSize="16"
+          labelColor="#292929"
         />
       </VisXYContainer>
     </div>

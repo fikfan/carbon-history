@@ -18,7 +18,6 @@ import { useDataStore } from '@/stores/useDataStores'
 
 const store = useDataStore()
 const { selectedContinents, timelineRange, selectedComparison } = storeToRefs(store)
-
 </script>
 
 <style scoped>

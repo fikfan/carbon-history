@@ -14,4 +14,12 @@ onMounted(async() => {
 })
 
 const rawData = computed(() => store.rawData)
+
+useHead({
+  title: 'carbon history',
+  meta: [
+    { name: 'description', content: 'simple carbon history app' }
+  ],
+})
+
 </script>
