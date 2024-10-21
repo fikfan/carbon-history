@@ -1,7 +1,8 @@
 import { defineStore } from 'pinia'
+import { useRuntimeConfig } from 'nuxt/app';
+
 
 // dummy data generator
-
 const generateDummyData = () => {
   const data = [];
   for (let year = 1980; year <= 2022; year += 2) {
@@ -60,11 +61,12 @@ export const useDataStore = defineStore('data', {
   actions: {
     //fetch data
     async fetchData() {
+      const config = useRuntimeConfig();
       try {
-        const response = await fetch('http://127.0.0.1:8000/api/data/')
+        const response = await fetch(`${config.public.apiBase}/api/data/`)
         const data = await response.json();
         this.rawData = data;
-        console.log(data);
+        console.log(this.rawData, 'rawdata');
       } catch(error) {
         console.log('Error fetching data:', error)
       }

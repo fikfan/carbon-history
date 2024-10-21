@@ -1,0 +1,1 @@
+web: gunicorn esg_project.wsgi
